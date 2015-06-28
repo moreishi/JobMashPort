@@ -16,16 +16,13 @@ router.get('/', function(req, res, next) {
 });
 
 /* Twitter */
-router.get('/api/twitter', function(req, res, next) {
+router.get('/api/search', function(req, res, next) {
 
-  client.stream('filter', { track: 'angularjobs' }, function(error, tweets, response){
-    console.log(error);
-    if (!error) {
-      console.log(tweets);
-      res.json(tweets);
-    }
+  var q = req.query['q'];
+
+  client.get('search/tweets', {q: q, result_type: 'recent'}, function(error, tweets, response){
+     res.json(tweets);
   });
-
   
 });
 

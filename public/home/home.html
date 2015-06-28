@@ -1,11 +1,12 @@
-<div class="container-fluid">
+<div class="container">
   <div class="jumbotron">
     <div class="container">
       <h1>Job Mash Port</h1>
-      <form>
+      <p><h4>Quick and Smart way of finding a job.</h4></p>
+      <form ng-submit="search()">
       <div class="form-group">
         <!-- <label for="job">Email address</label> -->
-        <input type="text" class="form-control" id="job" placeholder="Search Job e.g AngularJS">
+        <input ng-model="f.search" type="text" class="form-control" id="job" placeholder="Search Job e.g AngularJS">
       </div>
       <button type="submit" class="btn btn-success">Search</button>
     </form>
@@ -15,101 +16,25 @@
 
 <div class="container">
 
-  <h1>Jobs</h1>
+  <h1 ng-show="jobs">Jobs positions available</h1>
+  <h1 ng-show="!jobs">Zero 0 Job search result</h1>
 
   <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-6" ng-repeat="j in jobs">
+      
       <div class="media">
         <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/454374322459525120/CrYC9HBz_bigger.png" width="32px" height="32px" alt="...">
-          </a>
+          <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/454374322459525120/CrYC9HBz_bigger.png" width="32px" height="32px" alt="...">
         </div>
         <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
+          <!-- <h4 class="media-heading">{{j.source}}<small>2 days ago</small></h4> -->
+          <p ng-bind-html="j.text | linky: '_blank'"></p>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/439043250926538752/BG9YS2m4_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/439043250926538752/BG9YS2m4_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/509197684805095425/cEqvfVZi_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/454374322459525120/CrYC9HBz_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/509197684805095425/cEqvfVZi_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="media">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/454374322459525120/CrYC9HBz_bigger.png" width="32px" height="32px" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sample Job Title <small>2 days ago</small></h4>
-          <p><small>Sample JOB description</small></p>
-        </div>
-      </div>
-    </div>
+
+    <!-- No result found -->
 
   </div>
 

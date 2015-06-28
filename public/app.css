@@ -51,4 +51,5 @@ footer {
 .media {
   margin-bottom: 20px;
   border: 1px #0c0c0c;
+  min-height: 50px;
 }
