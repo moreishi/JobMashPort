@@ -39,7 +39,6 @@ angular.module('myApp.home', ['ngRoute','ngSanitize'])
       get: ['$q','SearchSrvc', function($q,SearchSrvc) {
         var defer = $q.defer();
         SearchSrvc.init(function(a) {
-          console.log(a);
           defer.resolve(a);
         });
         return defer.promise;
