@@ -1,0 +1,16 @@
+{
+  "name": "jobApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/moreishi/JobMashPort",
+  "authors": [
+    "Caesar Ian Belza <moreishi@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "angular-route": "~1.4.0",
+    "angular": "~1.4.1"
+  }
+}

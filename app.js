@@ -56,5 +56,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(Number(3000));
 
 module.exports = app;
