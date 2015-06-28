@@ -16,7 +16,7 @@
 
 <div class="container">
 
-  <h1 ng-show="jobs">Jobs positions available</h1>
+  <h1 ng-show="jobs">Job positions available</h1>
   <h1 ng-show="!jobs">Zero 0 Job search result</h1>
 
   <div class="row">
@@ -28,8 +28,9 @@
           <img class="media-object" ng-src="https://pbs.twimg.com/profile_images/454374322459525120/CrYC9HBz_bigger.png" width="32px" height="32px" alt="...">
         </div>
         <div class="media-body">
-          <!-- <h4 class="media-heading">{{j.source}}<small>2 days ago</small></h4> -->
+          <!-- <h4 class="media-heading">{{j.source}}<small>2 days ago</small></h4> -->          
           <p ng-bind-html="j.text | linky: '_blank'"></p>
+          <h6>posted <i><span am-time-ago="j.created_at"></i></span></h6>
         </div>
       </div>
     </div>
