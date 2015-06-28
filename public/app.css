@@ -28,3 +28,27 @@
   content: "";
   padding: 0;
 }
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.jumbotron {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+
+footer {
+  margin-bottom: 30px;
+}
+
+.btn-more {
+  margin: auto;
+}
+
+.media {
+  margin-bottom: 20px;
+  border: 1px #0c0c0c;
+}
